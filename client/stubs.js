@@ -10,7 +10,7 @@ Meteor.methods({
             x1: data.x1,
             y1: data.y1,
             w: data.w,
-            opacity: opacity,
+            opacity: data.opacity,
             c: data.c
         }); // end of points.insert()
     }
