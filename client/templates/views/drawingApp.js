@@ -23,6 +23,17 @@ Template.drawingApp.onRendered(function() {
         }
     });
 
+    // initialize Confirmation popup for "clear" button
+    $('#clear').confirmation({
+        onConfirm: function() {
+
+            // clear the drawing
+            Meteor.call('clear', function() {
+                canvas.clear();
+            });
+        }
+    });
+
     // initialize Mini Colors plugin
     $('#color-input').minicolors({
         theme: 'bootstrap',
@@ -67,12 +78,6 @@ Template.drawingApp.onRendered(function() {
 
 
 Template.drawingApp.events({
-
-    'click button.clear': function(event) {
-        Meteor.call('clear', function() {
-            canvas.clear();
-        });
-    },
 
     'change #thickness-input': function(event) {
         thickness = parseInt(event.target.value, 10);
