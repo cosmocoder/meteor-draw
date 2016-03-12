@@ -6,7 +6,7 @@ Canvas = function (canvasWidth) {
         svg = d3.select('#canvas')
             .append('svg')
             .attr('width', canvasWidth)
-            .attr('height', 600);
+            .attr('height', 500);
     };
 
     self.createSvg();
